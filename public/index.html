@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <script async>
+    const theme = localStorage.getItem('theme');
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.setAttribute('class', 'theme');
+    document.head.appendChild(style);
+    switch (theme) {
+      case 'dark':
+        style.appendChild(document.createTextNode('html{background:black}'));
+        break;
+      case 'light':
+        style.appendChild(document.createTextNode('html{background:white}'));
+        break;
+      default:
+        style.appendChild(document.createTextNode('html{background:white}'));
+        break;
+    }
+  </script>
+  <title>React App</title>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div style='height: 100vh' id='root'></div>
+</body>
+</html>
